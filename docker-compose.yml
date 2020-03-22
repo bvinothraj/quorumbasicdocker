@@ -7,3 +7,8 @@ services:
 #      - ./node1:/gethdockerbasicnode1
     ports:
       - "9501:9501"
+  txnode1:
+    build: txnode1
+    container_name: quorumtxnode
+    volumes:
+      - 
