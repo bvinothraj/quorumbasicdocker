@@ -1,0 +1,9 @@
+version: '2.1'
+services:
+  node1:
+    build: node1
+    container_name: quorumbasicdocker
+#    volumes:
+#      - ./node1:/gethdockerbasicnode1
+    ports:
+      - "9501:9501"
