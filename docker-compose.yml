@@ -1,14 +1,39 @@
-version: '2.1'
+version: '3.6'
 services:
   node1:
     build: node1
     container_name: quorumbasicdocker
-#    volumes:
-#      - ./node1:/gethdockerbasicnode1
+    depends_on:
+      - txnode1
+    networks:
+      quorumbasicdocker:
+        ipv4_address: '172.16.1.1'
+    volumes:
+      - type: volume
+        source: qtxnode1
+        target: /qtxnode
+        volume:
+          nocopy: true
     ports:
       - "9501:9501"
   txnode1:
     build: txnode1
     container_name: quorumtxnode
+    networks:
+      quorumbasicdocker:
+        ipv4_address: '172.16.1.2'
     volumes:
-      - 
+      - qtxnode1:/qtxnode
+    ports:
+      - "9081:9081"
+      - "9001:9001"
+volumes:
+  "qtxnode1":
+networks:
+  quorumbasicdocker:
+    name: quorumbasicdocker
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.0.0/16
