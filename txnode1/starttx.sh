@@ -5,6 +5,12 @@ if [[ ! -d "tm" ]]; then
 	mv txnode1.pub tm/txnode1.pub
 fi
 
-ls
+# Remove tm.ipc if already present
+# else tessera will not launch
+if[[ -e "/tm/tm.ipc"]]; then
+	echo "Removing tm.ipc file..."
+	rm tm/tm.ipc
+fi
+
 echo "Launching tessera..."
 java -jar /tessera/tessera-app.jar -configfile config.json >> tessera.log 2>&1
