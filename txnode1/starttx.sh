@@ -7,7 +7,7 @@ fi
 
 # Remove tm.ipc if already present
 # else tessera will not launch
-if [[ -e "/tm/tm.ipc" ]]; then
+if [[ -e "./tm/tm.ipc" ]]; then
 	echo "Removing tm.ipc file..."
 	rm tm/tm.ipc
 fi

@@ -38,8 +38,8 @@
 		"passwordFile": ["pass.txt"],
 		"keyData": [
 			{
-				"privateKeyPath": "txnode1.key",
-				"publicKeyPath": "txnode1.pub"
+				"privateKeyPath": "./tm/txnode1.key",
+				"publicKeyPath": "./tm/txnode1.pub"
 			}
 		]
 	},
