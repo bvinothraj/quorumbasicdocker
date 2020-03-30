@@ -16,7 +16,7 @@ echo "Waiting for transaction node to launch (50 sec)..."
 sleep 50
 
 echo "Launching geth..."
-PRIVATE_CONFIG=/qtxnode1/tm/tm.ipc nohup geth \
+PRIVATE_CONFIG=/qtxnode/tm/tm.ipc nohup geth \
 	--datadir data \
 	--nodiscover \
 	--verbosity 5 \
